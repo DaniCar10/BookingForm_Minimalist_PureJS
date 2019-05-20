@@ -1,0 +1,132 @@
+
+
+
+
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+<!-- ============ ANTES DE COLOCAR NO GIT CHECAR CALENDÁRIO NO MOZILLA ============ -->
+
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Flight</title>
+  </head>
+  <body>
+    <div id="form_box" class="container-fluid">
+        <h1 class="text-center">Escolha sua viagem</h1>
+          <form id="myForm">
+            <div class="form-group" >
+              <label for="select1">Departure</label>
+              <select id="list_departure" class="form-control">
+                <option disabled selected value="um"> -- selecione uma opção -- </option>
+                <option value="fln">Florianópolis Airport</option>
+                <option value="lnd">Heathrow Airport</option>
+                <option value="prs">Charles de Gaulle Airport</option>
+                <small id="departure_error" class="form-text" style="display: none;">Preencha corretamente os campos acima</small>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="select2">Destiny</label>
+              <select id="list_destiny" class="form-control">
+                <option disabled selected value="zero"> -- selecione uma opção -- </option>
+                <option value="fln">Florianópolis Airport</option>
+                <option value="lnd">Heathrow Airport</option>
+                <option value="prs">Charles de Gaulle Airport</option>
+              </select>
+              <small id="destiny_error" class="form-text" style="display: none;">Insira destinos válidos</small>
+            </div>
+
+            <div class="row">
+              <div class="col">
+            <div class="form-group">
+              <label for="date_departure">Date Departure</label>
+              <input type="date" name="somedate" class="form-control" id="date_departure">
+              <small id="date_error" class="form-text" style="display: none;">Insira datas vállidas</small>
+            </div>
+            </div>
+            <div class="col">
+            <div class="form-group">
+              <label for="date_back">Date Back</label>
+              <input type="date" name="somedate2" class="form-control" id="date_back">
+              <small id="date_error2" class="form-text" style="display: none;">Insira datas válidas</small>
+            </div>
+            </div>
+            <div class="col">
+              <div class="form-group" >
+              <label for="people_num">Pessoas</label>
+              <input  id="list_people" type="number" class="form-control" placeholder="0">
+              <small id="people_error" class="form-text" style="display: none;">Não esqueça deste campo</small>
+            </div>
+            </div>
+            </div>
+              <div class="text-center">
+                <button id="myModal" type="submit" onclick="getPrice();" class="btn btn-outline-primary" data-toggle="modal" data-target="">
+                  Compre
+                </button>
+              </div>
+          </form>
+          </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <h5 class="modal-title" id="exampleModalLabel">Confirme sua compra</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table  class="table" id="myTable" style="display: none;">
+                <thead>
+                  <tr>
+                    <th>Ticket</th>
+                    <th>Qtd</th>
+                    <th>Taxa</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                </tbody>
+              </table>
+              <div class="justify-content-center">
+                <small id="buy_message" class="form-text text-center" style="display: none;">Sua compra foi confirmada!</small>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button onclick="clearRow();" type="button" class="btn btn-outline-primary" data-dismiss="modal">Nova cotação</button>
+              <!-- <button  type="button" onclick="clearRow();"  name="btn btn-outline-danger">Clean table</button> -->
+              <button onclick="toBuy();" type="button" class="btn btn-outline-primary">Comprar</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

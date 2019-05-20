@@ -1,0 +1,146 @@
+/* https://colorlib.com/etc/cf/ContactFrom_v2/index.html */
+
+body {
+  background: url('https://source.unsplash.com/collection/4779223/1920x1080') no-repeat center center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#form_box {
+/* background: blue; */
+background-color: rgba(0, 0, 0, 0.9);
+width: 50%;
+margin-top: 4em;
+}
+
+#myModal {
+  margin-top: 1em;
+  margin-bottom: 2em;
+
+}
+
+small {
+  color: white;
+}
+
+h1 {
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  color: #f7025c;
+}
+
+label {
+  color: #f7025c;
+}
+
+option {
+  /* background: rgba(0, 0, 0, 0); */
+  background: black;
+  opacity: 1 !important;
+  -webkit-appearance: none;
+}
+
+select {
+  /* background: rgba(0, 0, 0, 0.1); */
+  -webkit-appearance: none;
+}
+
+select#list_departure.form-control {
+  /* background: blue; */
+  background: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+}
+
+.form-control {
+  border-radius: 0px;
+  border: none;
+  border-bottom: 2px solid #f7025c;
+  outline: none;
+  /* background: transparent; */
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.form-control:focus {
+  border: none;
+  border-color: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.modal-header .close {
+  display: none;
+}
+
+#exampleModal {
+  background: rgba(247, 2, 92, 0.8);
+}
+
+.modal-content {
+  background: black;
+
+}
+
+.modal-title {
+    color: #f7025c;
+}
+
+.modal-body {
+  color: #f7025c;
+}
+
+table#myTable.table {
+  border-color: none;
+}
+
+.table {
+  color: #f7025c;
+  border-color: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+tr {
+  border-color: none;
+}
+
+th {
+  border-color: none;
+}
+
+thead {
+  border-top: none;
+}
+
+.table th, .table td {
+  border-top: none;
+}
+
+#buy_message {
+    font-size: 30px;
+    color: #f7025c;
+}
+
+.btn-outline-primary {
+  color: #f7025c;
+  border-color: #f7025c;
+}
+
+.btn-outline-primary:hover {
+  background-color: #f7025c;
+  border-color: #f7025c;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
